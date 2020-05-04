@@ -1,12 +1,12 @@
 
---Adriel Vicente da Conceição 	RA 1901842
+--Adriel Vicente da ConceiÃ§Ã£o 		RA 1901842
 --Ariane Santos Cavalcante 		RA 1902296
---Alexsandro Augusto Ignácio  	RA 1901705
---Micaella leal 				RA 1902427
+--Alexsandro Augusto IgnÃ¡cio  		RA 1901705
+--Micaella leal 			RA 1902427
 --Elton Martins Cardoso			RA 1901730
 
 
---1- Em um único SELECT exiba o nome do(s) professor(es) que deram nota 2 nas ACs 1
+--1- Em um Ãºnico SELECT exiba o nome do(s) professor(es) que deram nota 2 nas ACs 1
 --entregues no primeiro semestre de 2015 (exiba apenas uma vez o nome de cada
 --professor)
 
@@ -20,7 +20,7 @@ FROM ENTREGA
     JOIN ALUNO ON ALUNO.ID = ENTREGA.IDALUNO
 WHERE (ENTREGA.DTENTREGA BETWEEN '2015-01-01' AND '2015-06-30' AND ENTREGA.TITULO = 'AC 1' AND ENTREGA.NOTA = 2.00)
 
---2- Em um único SELECT exiba o nome, email e login do(s) alunos(s) que não possuem
+--2- Em um Ãºnico SELECT exiba o nome, email e login do(s) alunos(s) que nÃ£o possuem
 --nenhuma atividade cadastrada na tabela ENTREGA. Ordenado alfabeticamente pelo
 --nome do aluno.
 
@@ -41,7 +41,7 @@ ORDER BY ALUNO.NOME ASC;
 
 
 
---3- Em um único SELECT exiba nome dos professores e das disciplinas da turma A do
+--3- Em um Ãºnico SELECT exiba nome dos professores e das disciplinas da turma A do
 --semestre 1 do ano de 2016 do curso de 'Banco de Dados'. Ordenados pelo nome da
 --disciplina. Crie alias/apelido para identificaras colunas.
 
@@ -57,8 +57,8 @@ WHERE DISCIPLINAOFERTADA.TURMA = 'A' AND DISCIPLINAOFERTADA.SEMESTRE = 1 AND DIS
 ORDER BY DISCIPLINA.NOME
 
 
---4- Em um único SELECT exiba em 4 colunas o login, senha, o nome da pessoa (aluno ou
---coordenador) e na quarta coluna exiba se aquele nome é de um aluno ou de
+--4- Em um Ãºnico SELECT exiba em 4 colunas o login, senha, o nome da pessoa (aluno ou
+--coordenador) e na quarta coluna exiba se aquele nome Ã© de um aluno ou de
 --coordenador. Exibir somente logins de alunos ou coordenadores. Ordene exibindo
 --primeiramente os alunos e depois os coordenadores. Crie alias/apelido para identificaras
 --colunas.
@@ -79,15 +79,15 @@ WHERE ALUNO.IDUSUARIO = USUARIO.ID OR COORDENADOR.IDUSUARIO = USUARIO.ID
 ORDER BY ALUNO_COORDENADOR
 
 
---5-Em um único SELECT exiba em colunas o nome dos professores, a nota das 5 ACs (uma
---nota em cada coluna) e a média das notas das ACs ((AC1+AC2+AC3+AC4+AC5)/ 5 ) da
---aluna 'ELIANA PRADO DE AZEVEDO'. Ordene considerando as médias em ordem
+--5-Em um Ãºnico SELECT exiba em colunas o nome dos professores, a nota das 5 ACs (uma
+--nota em cada coluna) e a mÃ©dia das notas das ACs ((AC1+AC2+AC3+AC4+AC5)/ 5 ) da
+--aluna 'ELIANA PRADO DE AZEVEDO'. Ordene considerando as mÃ©dias em ordem
 --crescente. Crie alias/apelido para identificaras colunas
 
 
 
 SELECT COLUNAS.NOME, 
-	ISNULL(COLUNAS.[AC 1],0) AC1 , 
+	ISNULL(COLUNAS.[AC 1],0) AC1, 
 	ISNULL(COLUNAS.[AC 2],0) AC2, 
 	ISNULL(COLUNAS.[AC 3],0) AC3, 
 	ISNULL(COLUNAS.[AC 4],0) AC4,
@@ -108,7 +108,7 @@ WHERE ALUNO.NOME = 'ELIANA PRADO DE AZEVEDO'
 	PIVOT (SUM(NOTA) FOR TITULO IN ([AC 1], [AC 2], [AC 3], [AC 4], [AC 5], [MEDIA_ACS] )) AS COLUNAS
 ORDER BY MEDIA_ACS ASC
 
---PROFESSOR, NÃO CONSEGUIMOS FAZER O 5º EXERCICIO COM JOINS!
+--PROFESSOR, NÃƒO CONSEGUIMOS FAZER O 5Âº EXERCICIO COM JOINS!
 
 
 
