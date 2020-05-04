@@ -1,4 +1,10 @@
-use LMS
+
+--Adriel Vicente da Conceição 	RA 1901842
+--Ariane Santos Cavalcante 		RA 1902296
+--Alexsandro Augusto Ignácio  	RA 1901705
+--Micaella leal 				RA 1902427
+--Elton Martins Cardoso			RA 1901730
+
 
 --1- Em um único SELECT exiba o nome do(s) professor(es) que deram nota 2 nas ACs 1
 --entregues no primeiro semestre de 2015 (exiba apenas uma vez o nome de cada
